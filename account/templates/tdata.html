@@ -1,0 +1,43 @@
+<h1>Hello Teacher </h1>
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher page</title>
+</head>
+<body>
+    {% comment %} <video width="530" height="440" controls autoplay>
+        <source src="{% static "account/22/Maiya-Mainu-Jersey-Full-Screen-WhatsApp-Status-Jersey-Shahid-Kapoor-Full-Scre_d9iE0kc.mp4" %}" type="video/mp4"> </source>
+    </video> {% endcomment %}
+
+{% comment %} {{x.videos.url} {% endcomment %}
+    <div>
+
+        {% comment %} {% for x in videos %} {% endcomment %}
+        <form action="POST" enctype="multipart/form-data">
+            <video>
+                <source src="{{ videos.url }}" type="video/mp4"> </source>
+            </video>
+        </form> 
+        {% comment %} {% endfor %} {% endcomment %}
+
+        <br><br>
+        {{captions}}
+         
+        <a href="{% url  'login' %}"><input type="submit" value="logout"></a><br><br>
+        
+        <form  action="{% url  'edit' %}"  method="POST">
+            {% csrf_token %} 
+
+            <input type="submit"  value="update"  class="btn btn-success">
+
+        </form>
+
+    </div>
+
+
+</body>
+</html>
